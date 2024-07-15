@@ -1,0 +1,54 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  margin: 0;
+}
+
+/* Стилі для обнулення верхніх відступів у елементів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Клас для обнулення базових властивостей у посилань */
+a {
+  text-decoration: none;
+}
+
+/* Властивості для коректного відображення картинок */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Властивості для обнулення курсиву address */
+address {
+  font-style: normal;
+}
+
+/*Глобальні стилі для кнопок*/
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
+
+/*Глобальні стилі для полів вводу*/
+input {
+  font-family: inherit;
+}
