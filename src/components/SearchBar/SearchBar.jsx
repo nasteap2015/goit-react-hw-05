@@ -1,9 +1,12 @@
+import {toast, Toaster} from 'react-hot-toast';
+import css from './SearchBar.module.css';
+
 const SearchBar = ({ onSearch }) => {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         const form = evt.target;
         const query = form.elements.query.value;
-        if (form.elements.query.value.trim() === "") {
+        if (query.trim() === "") {
             toast('Please enter a search query!',
                 {
                     style: {
@@ -20,9 +23,10 @@ const SearchBar = ({ onSearch }) => {
     };
     
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="query"/>
-            <button type="submit">Search</button>
+        <form onSubmit={handleSubmit} className={css.searchForm}>
+            <input type="text" name="query" className={css.searchInput}/>
+            <button type="submit" className={css.searchButton}>Search</button>
+            <Toaster />
         </form>
     )
 };

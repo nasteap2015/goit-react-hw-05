@@ -1,0 +1,8 @@
+.movieLink{
+    color: inherit;
+}
+
+.movieLink:hover{
+    text-decoration: underline;
+    color: orangered;
+}

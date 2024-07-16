@@ -1,0 +1,32 @@
+.backLink{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.section{
+    padding: 0 16px 8px;
+}
+
+.movieContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.movieOverview{
+    border-bottom: 1px solid black;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.additionalSectionTitle{
+    margin-bottom: 16px;
+}
+
+.additionalSectionItem{
+    margin-bottom: 8px;
+}
