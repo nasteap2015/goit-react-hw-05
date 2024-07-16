@@ -1,5 +1,5 @@
-import { Link, useParams, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
+import { useEffect, useState, Suspense } from 'react';
 import { fetchMovieDetails } from '../FetchMoviesAPI';
 import { IoIosArrowRoundBack } from "react-icons/io";
 
@@ -28,8 +28,6 @@ const MovieDetailsPage = () => {
     }
     getMovieDetails();
     }, [movieId]);
-    
-    console.log(movieDetails);
 
     return (
         <main>
@@ -59,6 +57,10 @@ const MovieDetailsPage = () => {
                     </li>
                 </ul>
             </div>
+
+            <Suspense fallback={<div>Loading subpage...</div>}>
+                <Outlet />
+            </Suspense>
         </main>
     )
 };
