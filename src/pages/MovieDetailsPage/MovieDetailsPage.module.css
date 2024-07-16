@@ -30,3 +30,7 @@
 .additionalSectionItem{
     margin-bottom: 8px;
 }
+
+.movieDetailsLink{
+    color: inherit;
+}

@@ -56,10 +56,10 @@ const MovieDetailsPage = () => {
                     <p className={css.additionalSectionTitle}>Additional information</p>
                     <ul>
                         <li className={css.additionalSectionItem}>
-                            <Link to="cast">Cast</Link>
+                            <Link to="cast" className={css.movieDetailsLink}>Cast</Link>
                         </li>
                         <li className={css.additionalSectionItem}>
-                            <Link to="reviews">Reviews</Link>
+                            <Link to="reviews" className={css.movieDetailsLink}>Reviews</Link>
                         </li>
                     </ul> 
                     <Suspense fallback={<div>Loading subpage...</div>}>
