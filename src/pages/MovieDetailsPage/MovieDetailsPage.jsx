@@ -1,5 +1,5 @@
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense, useRef } from 'react';
 import { fetchMovieDetails } from '../../FetchMoviesAPI';
 import { IoIosArrowRoundBack } from "react-icons/io";
 import css from './MovieDetailsPage.module.css';
@@ -10,7 +10,7 @@ const MovieDetailsPage = () => {
     const [error, setError] = useState(false);
     const [movieDetails, setMovieDetails] = useState([]);
     const location = useLocation();
-    const backLinkHref = location.state ?? '/movies';
+    const backLinkHref = useRef(location.state ?? '/movies');
     const defaultImg = `https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster`
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const MovieDetailsPage = () => {
 
     return (
         <main className={css.section}>
-            <Link to={backLinkHref} className={css.backLink}>
+            <Link to={backLinkHref.current} className={css.backLink}>
                 <IoIosArrowRoundBack size="24" />
                 Go back
             </Link>
