@@ -11,7 +11,9 @@ const MovieDetailsPage = () => {
     const [movieDetails, setMovieDetails] = useState([]);
     const location = useLocation();
     const backLinkHref = useRef(location.state ?? '/movies');
-    const defaultImg = `https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster`
+    const defaultImg = `https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster`;
+    const [genres, setGenres] = useState([]);
+
 
     useEffect(() => {
     async function getMovieDetails() {
@@ -20,7 +22,8 @@ const MovieDetailsPage = () => {
         setError(false);
         setLoading(true);
         const dataMoviesDetails = await fetchMovieDetails(movieId);
-        setMovieDetails(dataMoviesDetails);
+          setMovieDetails(dataMoviesDetails);
+        setGenres(dataMoviesDetails.genres)
       } catch (error) {
         setError(true);
       } finally {
@@ -51,7 +54,11 @@ const MovieDetailsPage = () => {
                         <h2>Overview</h2>
                         <p>{movieDetails.overview}</p>
                         <h2>Genres</h2>
-                        {/* <p>{movieDetails.genres.map((genre) => genre.name).join(" ")}</p> */}
+                        <ul>
+                            {genres.map((genre) => (
+                                <li key={genre.id}>{genre.name}</li>
+                            ))}
+                        </ul>
                     </div>
                     <p className={css.additionalSectionTitle}>Additional information</p>
                     <ul>
