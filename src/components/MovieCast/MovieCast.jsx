@@ -28,17 +28,18 @@ const MovieCast = () => {
     }, [movieId]);
 
     return (
-        <section>
+        <section className={css.castContainer}>
             {loading && <div>Loading...</div>}
             {error && <div>No movie details</div>}
             <ul>
             {movieCast.map((movie) => (
                 <li key={movie.id} className={css.castListItem}>
-                  <img src={
-                      movie.profile_path
-                      ? `https://image.tmdb.org/t/p/w500/${movie.profile_path}`
-                      : defaultImg}
-                      alt={movie.name} width="100" />
+                <img src={
+                  movie.profile_path
+                    ? `https://image.tmdb.org/t/p/w500/${movie.profile_path}`
+                    : defaultImg}
+                  alt={movie.name} width="100"
+                  className={css.castImg} />
                   <div>
                     <p className={css.castMemberName}>{movie.name}</p>
                     <p>Character: {movie.character}</p>

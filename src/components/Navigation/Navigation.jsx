@@ -9,6 +9,7 @@ const buildLinkClass = ({ isActive }) => {
 const Navigation = () => {
   return (
     <header className={css.header}>
+      <p className={css.hometitle}>MovieBox</p>
       <nav className={css.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home

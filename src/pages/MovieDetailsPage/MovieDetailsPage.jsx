@@ -39,14 +39,15 @@ const MovieDetailsPage = () => {
                 <IoIosArrowRoundBack size="24" />
                 Go back
             </Link>
-            {loading && <div>Loading...</div>}
-            {error && <div>No movie details</div>}
+            {loading && <div className={css.infoMessage}>Loading...</div>}
+            {error && <div className={css.infoMessage}>No movie details</div>}
             <div className={css.movieContainer}>
                 <img src={
                     movieDetails.poster_path
-                    ?`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`
-                    : defaultImg}
-                    alt={movieDetails.title} width="400px" />
+                        ? `https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`
+                        : defaultImg}
+                    alt={movieDetails.title} width="400px"
+                    className={css.poster} />
                 <div className={css.movieDetailsContainer}>
                     <div className={css.movieOverview}>
                         <h1>{movieDetails.title}</h1>
@@ -60,15 +61,18 @@ const MovieDetailsPage = () => {
                             ))}
                         </ul>
                     </div>
-                    <p className={css.additionalSectionTitle}>Additional information</p>
-                    <ul>
-                        <li className={css.additionalSectionItem}>
+                    <div className={css.linksContainer}>
+                        <h3 className={css.additionalSectionTitle}>Additional information</h3>
+                        <ul>
+                            <li className={css.additionalSectionItem}>
                             <Link to="cast" className={css.movieDetailsLink}>Cast</Link>
-                        </li>
-                        <li className={css.additionalSectionItem}>
+                            </li>
+                            <li className={css.additionalSectionItem}>
                             <Link to="reviews" className={css.movieDetailsLink}>Reviews</Link>
-                        </li>
-                    </ul> 
+                            </li>
+                        </ul>
+                    </div>
+                     
                     <Suspense fallback={<div>Loading subpage...</div>}>
                         <Outlet />
                     </Suspense>

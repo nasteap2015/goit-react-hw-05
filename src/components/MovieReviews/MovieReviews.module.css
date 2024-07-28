@@ -1,3 +1,9 @@
 .movieReview{
     margin-bottom: 16px;
 }
+
+.reviewsContainer{
+    padding: 8px 8px;
+    background-color: #fafafa;
+    border-radius: 5px;
+}

@@ -1,11 +1,12 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    color: #fafafa;
     gap: 16px;
-    padding: 8px 0;
+    padding: 8px 12px;
     margin-bottom: 16px;
-    box-shadow: 0px 1px 7px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 1px 7px 0px #fafafa;
 }
 
 .nav {
@@ -16,7 +17,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     text-decoration: none;
-    color: black;
+    color: #fafafa;
     font-weight: 500;
 }
 
@@ -25,5 +26,15 @@
 }
 
 .active {
-    color: orangered;
+    text-decoration: underline;
 }
+
+.hometitle{
+    font-weight: 800;
+    font-size: 18px;
+    background-color: #fafafa;
+    color: rgb(20, 20, 148);
+    border-radius: 5px;
+    padding: 5px;
+}
+

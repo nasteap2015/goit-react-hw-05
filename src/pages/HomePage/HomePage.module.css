@@ -1,3 +1,8 @@
 .homePageContainer{
     padding: 0 16px 16px;
 }
+
+.homePageTitle{
+    color: #fafafa;
+    margin-bottom: 20px;
+}

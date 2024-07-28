@@ -27,7 +27,7 @@ const MovieReviews = () => {
     }, [movieId]);
 
     return (
-        <section>
+        <section className={css.reviewsContainer}>
             {loading && <div>Loading...</div>}
             {error && <div>No movie details</div>}
             <ul>

@@ -43,8 +43,8 @@ const MoviesPage = () => {
     return (
         <main className={css.section}>
             <SearchBar onSearch={handleSearch}/>
-            {loading && <div>Loading...</div>}
-            {error && <div>No movie found</div>}
+            {loading && <div className={css.infoMessage}>Loading...</div>}
+            {error && <div className={css.infoMessage}>No movie found</div>}
             <MovieList movies={movies} />
         </main>
     )

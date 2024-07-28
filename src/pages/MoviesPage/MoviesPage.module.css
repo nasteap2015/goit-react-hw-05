@@ -1,3 +1,7 @@
 .section{
     padding: 0 16px 8px;
 }
+
+.infoMessage{
+    color: #fafafa;
+}

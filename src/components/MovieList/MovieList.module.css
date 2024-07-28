@@ -1,8 +1,48 @@
-.movieLink{
-    color: inherit;
+.movieList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    flex-direction: row;
 }
 
-.movieLink:hover{
-    text-decoration: underline;
-    color: orangered;
+.movieListItem{
+    box-sizing: border-box;
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 5px;
+    width: calc((100% - 64px) / 5);
+    transition: transform 500ms linear;
+}
+
+.movieListItem:hover {
+    transform: scale(1.05, 1.05)
+}
+
+.movieLink{
+    color: inherit;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.movieImg{
+    width: 100%;
+}
+
+.movieTitle{
+    font-weight: 500;
+    text-align: center;
+}
+
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.score{
+    text-align: center;
 }
