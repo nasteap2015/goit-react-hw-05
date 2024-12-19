@@ -1,0 +1,18 @@
+.userMenu{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.welcomeTitle{
+    font-weight: 600;
+}
+
+.loginButton{
+    width: 70px;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #90EE90;
+}

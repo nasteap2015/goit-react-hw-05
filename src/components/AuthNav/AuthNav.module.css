@@ -1,0 +1,8 @@
+.authNavigation{
+    display: flex;
+    gap: 16px;
+}
+
+.AuthNavLink:hover{
+    text-decoration: underline;
+}
