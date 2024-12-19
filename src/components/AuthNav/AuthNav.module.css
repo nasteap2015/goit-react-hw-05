@@ -3,6 +3,11 @@
     gap: 16px;
 }
 
+.AuthNavLink{
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
 .AuthNavLink:hover{
     text-decoration: underline;
 }

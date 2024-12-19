@@ -27,8 +27,8 @@ const HomePage = () => {
     return (
         <div className={css.homePageContainer}>
             <h1 className={css.homePageTitle}>Trending today:</h1>
-            {loading && <div>Loading...</div>}
-            {error && <div>No trending movies</div>}
+            {loading && <div className={css.infoMessage}>Loading...</div>}
+            {error && <div className={css.infoMessage}>No trending movies</div>}
             <MovieList movies={movies} />
         </div>
     )

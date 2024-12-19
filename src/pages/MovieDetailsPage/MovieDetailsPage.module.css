@@ -57,3 +57,17 @@
 .poster{
     border-radius: 5px;
 }
+
+.titleFavContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.favButton {
+    border: none;
+    background-color: #fff;
+}       
+
+.favIconFavourite{
+    fill: rgb(20, 20, 148);
+}

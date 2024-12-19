@@ -1,0 +1,24 @@
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 350px;
+    padding: 12px;
+    color: #FFFFFF;
+}
+
+.input{
+    outline: none;
+}
+
+
+.button {
+    width: 70px;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #141494;
+    font-weight: 600;
+}

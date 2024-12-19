@@ -5,7 +5,7 @@
 }
 
 .welcomeTitle{
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .loginButton{
@@ -14,5 +14,7 @@
     padding: 8px;
     border: none;
     border-radius: 5px;
-    background-color: #90EE90;
+    color: #141494;
+    font-weight: 600;
+    background-color: #FFFFFF;
 }

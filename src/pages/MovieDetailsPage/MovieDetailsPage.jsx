@@ -1,8 +1,14 @@
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { useEffect, useState, Suspense, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovieDetails } from '../../FetchMoviesAPI';
 import { IoIosArrowRoundBack } from "react-icons/io";
 import css from './MovieDetailsPage.module.css';
+import { selectFavourites } from "../../redux/favourites/selectors";
+import { markAsFavorite } from "../../redux/favourites/slice";
+import { LuHeart } from "react-icons/lu";
+import clsx from "clsx";
+
 
 const MovieDetailsPage = () => {
     const { movieId } = useParams();
@@ -13,6 +19,8 @@ const MovieDetailsPage = () => {
     const backLinkHref = useRef(location.state ?? '/movies');
     const defaultImg = `https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster`;
     const [genres, setGenres] = useState([]);
+    const favsId = useSelector(selectFavourites);
+    const isFavourite = favsId.includes(movieId);
 
 
     useEffect(() => {
@@ -33,6 +41,11 @@ const MovieDetailsPage = () => {
     getMovieDetails();
     }, [movieId]);
 
+    const dispatch = useDispatch();
+    const handleClick = () => {
+        dispatch(markAsFavorite(movieId))
+    };
+
     return (
         <main className={css.section}>
             <Link to={backLinkHref.current} className={css.backLink}>
@@ -50,7 +63,12 @@ const MovieDetailsPage = () => {
                     className={css.poster} />
                 <div className={css.movieDetailsContainer}>
                     <div className={css.movieOverview}>
-                        <h1>{movieDetails.title}</h1>
+                        <div className={css.titleFavContainer}>
+                            <h1>{movieDetails.title}</h1>
+                        <button onClick={handleClick} className={css.favButton}>
+                                <LuHeart className={clsx(isFavourite && css.favIconFavourite)} size={24} stroke="#141494" />
+                        </button>
+                        </div>
                         <p>User Score: {Math.floor(movieDetails.vote_average * 10)}%</p>
                         <h2>Overview</h2>
                         <p>{movieDetails.overview}</p>
